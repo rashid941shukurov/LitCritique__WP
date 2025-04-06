@@ -1,0 +1,152 @@
+.searchHeading{
+    font-size: 54px;
+    font-weight: 600;
+}
+.search-container{
+    display: flex;
+    gap: 0;
+}
+
+#search-button{
+    font-size: 20px;
+    padding: 10px 10px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #96B792;
+    width: calc(100% - 90%);
+}
+
+#search-button:active{
+    background-color: #799476;
+}
+.search{
+    border-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    width: 100%;
+}
+.search-input{
+    width: 100%;
+    font-size: 20px;
+}
+.reviewForm{
+    padding: 60px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.reviewInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+.selected-bookContent, .selected-bookReview{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.selectedReview, .selectedHeading{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+#reviewMessage{
+    border-radius: 5px;
+    padding: 10px 10px;
+    background-color: #b6b5b55a;
+}
+
+#reviewMessage::placeholder{
+    color: #F4DEC1;
+}
+
+.saveCancel{
+    display: flex;
+    gap: 40px;
+}
+.saveReview, .cancelReview{
+    padding: 10px 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    color: black;
+    font-weight: 600;
+}
+
+.saveReview{
+    background-color: #7f9c7c;
+}
+.cancelReview{
+    background-color: #9e6253;
+}
+
+.saveReview:active{
+    background-color: #657d63;
+}
+.cancelReview:active{
+    background-color: #794b3f;
+}
+
+#search-resultEl{
+    background-color: white;
+    border-radius: 2px;
+    display: none;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: top;
+    width: fit-content;
+    padding: 20px 20px;
+    cursor: pointer;
+}
+
+.resultEl{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 150px;
+    padding: 5px 10px;
+    border: solid black 0.1px;
+    border-radius: 2px;
+}
+.resultEl:hover{
+    background-color: rgb(217, 217, 217);
+}
+
+.resultEl p{
+    width: 100%;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    font-size: 12px;
+    color: black;
+}
+
+.bookInfo, .bookAuthorInf{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.bookInfo{
+    width: 100%;
+    gap: 20px;
+}
+.bookImg{
+    width: 100%;
+}
+
+#book-data{
+    display: none;
+}
+
+#search-clear{
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    border-right: solid 0.5px black;
+    padding: 10px 10px;
+    background-color: #E8E7E7;
+}
+#search-clear:active{
+    background-color: #d4d4d4;
+}

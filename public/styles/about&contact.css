@@ -1,0 +1,33 @@
+.about-heading{
+    font-size: 54px;
+    font-weight: 600;
+}
+.about{
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+
+/* Contact part */
+.contact-content, .contact__elements{
+    display: flex;
+    gap: 20px;
+}
+.contact-content{
+    flex-direction: column;
+}
+.contact__elements{
+    align-items: center;
+}
+.contactEl-name{
+    font-size: 30px;
+}
+.contactEl-img{
+    width: 30px;
+}
+.contact-img{
+    height: 80vh;
+}
+.imgContact{
+    height: 100%;
+}

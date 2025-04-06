@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomePage</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="body-special">
+    <wrapper class="wrapper">
+        <div class="wrapper-headermain">
+            
+            <%- include('partials/header') %>
+            <main class="main container">
+                <h3 class="main-heading">Add Your Review – Help Others Discover Great Reads</h3>
+            </main>
+        </div>
+
+        <div class="wrapper-mainImg">
+            <img src="img/homeImg.webp" alt="HomePage image" class="mainImg" draggable="false">
+        </div>
+    </wrapper>
+    <review class="review">
+        <div class="review-navigation">
+            <p class="review__heading">Book Store</p>
+            <div class="search">
+                <button class="search-icon"><img src="img/Vector.webp" draggable="false" alt="seach icon" class="search__img"></button>
+                <input type="text" placeholder="Search books: " class="search-input">
+            </div>
+        </div>
+        <ul class="review__store">
+            <li class="store-elements">
+                <div class="review__book">
+                    <img src="/img/ex.webp" alt="example cover" class="book-cover" draggable="false">
+                    <p class="book-author">Auhtor</p>
+                    <h3 class="book-name">Book Name</h3>
+                </div>
+            </li>
+            <li class="store-postNew">
+                <form action="/newReviewPage" method="POST">
+                    <button class="addNewReview">&#65291;</button>
+                </form>
+            </li>
+        </ul>
+    </review>
+    <%- include('partials/footer') %>
+</body>
+</html>
