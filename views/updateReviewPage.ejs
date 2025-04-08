@@ -8,24 +8,10 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/reviewPage.css">
     <script src="scripts/globalVariables.js" defer></script>
-    <script src="scripts/searchNewBook.js" defer></script>
+    <script src="scripts/updateBook.js" defer></script>
 </head>
 <body>
     <div id="review-form" class="reviewForm">
-        <h2 class="searchHeading">Search Book:</h2>
-
-        <div class="search-container">
-            <div class="search" id="book-choice">
-                <button class="search-icon"><img src="img/Vector.webp" draggable="false" alt="seach icon" class="search__img"></button>
-                <input type="text" placeholder="Search books: " class="search-input" id="search-book" name="searchBook">
-            </div>
-            <button id="search-clear">&#10761;</button>
-            <button id="search-button" onclick="fetchData()">Search</button>
-        </div>
-
-        <ul id="search-resultEl">
-        </ul>
-
         <div class="reviewInfo">
             <div class="selected-bookContent">
                 <h3 class="selectedHeading">Chosen Book:</h3>
@@ -49,7 +35,7 @@
                 <textarea name="reviewMessage"  id="reviewMessage" cols="60" rows="15" placeholder="Leave your review message here:"></textarea>
 
                 <div class="saveCancel">
-                    <button  class="saveReview" id="createApply" onclick="createBookReview()">Apply</button>
+                    <button  class="saveReviewEdit" id="editApply" onclick="updateBook()">Edit</button>
                     <button><a href="/" class="cancelReview">Cancel</a> </button>
                 </div>
             </div>

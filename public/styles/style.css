@@ -104,9 +104,11 @@ body{
 }
 
 
-.review__store, .store-elements{
+.review__store, .store-elements, .review__book{
     display: flex;
     flex-wrap: wrap;
+}
+.review__store{
     gap: 50px;
 }
 .book-author{
@@ -117,23 +119,32 @@ body{
     font-family: 'Courier New', Courier, monospace;
 }
 .book-name{
-    font-size: 22px;
+    font-size: 20px;
     font-style: bold;
     color: #F2806E;
     font-family: 'Courier New', Courier, monospace;
 }
-.review__book{
-    padding: 20px 15px;
-    cursor: pointer;
+.store-elements{
+    width: 200px;
+    flex-direction: column;
     transition: transform 0.3s ease; 
     background-color: #e6e6fa;
     border-radius: 5px;
+    padding: 20px 15px;
+    gap: 20px;
 }
-.review__book:hover{
+.review__book{
+    flex-direction: column;
+    gap: 10px;
+}
+
+.store-elements:hover{
     transform: translateY(-10px); 
 }
-.review__book:active{
-    background-color: #d7d7cc;
+
+.book-cover{
+    height: 200px;
+    width: 100%;
 }
 
 .addNewReview{
@@ -163,6 +174,41 @@ body{
     display: flex;
     align-items: center;
 }
-  
-  
+.review__actionButtons, .book-author, .book-name{
+   display: flex;
+    flex-wrap: wrap;
+}
+
+.review__actionButtons{
+    gap: 20px;
+    align-items: center;
+}
+
+.read{
+    background-color: #B1E19B;
+}
+.edit{
+    background-color: #AAD9EC;
+}
+.delete{
+    background-color: #D69091;
+}
+.read:active{
+    background-color: #95bd83;
+}
+.edit:active{
+    background-color: #91b9c8;
+}
+.delete:active{
+    background-color: #b87c7d;
+}
+.reviewActionBtn{
+    padding: 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.reviewAction{
+    width: 30px;
+    height: 30px;
+}
 

@@ -1,18 +1,71 @@
 const express = require('express')
 const router = express.Router()
+const Books = require('../models/books')
 
-router.get('/', (req,res)=>{
+router.get('/', (req, res) => {
     res.render('homePage')
 })
 
-router.get('/about', (req,res)=>{
+router.get('/about', (req, res) => {
     res.render('about')
 })
-router.get('/contact', (req,res)=>{
+
+router.get('/contact', (req, res) => {
     res.render('contact')
 })
-router.post('/newReviewPage', (req,res)=> {
+
+router.get('/newReviewPage', (req, res) => {
     res.render('newReviewPage')
+})
+router.get('/updateReviewPage', async (req, res) => {
+    res.render('updateReviewPage')
+})
+router.get('/readReviewPage', async (req, res) => {
+    res.render('readReviewPage')
+})
+
+
+router.post('/api/books', async (req, res) => {
+    try {
+        const book = new Books(req.body)
+        const saved = await book.save()
+        res.status(201).json(saved)
+    } catch (err) {
+        console.error('some mongoose error', err)
+        res.status(400).json({ error: err.message })
+    }
+})
+
+
+
+router.put('/api/books/:bookId', async (req, res) => {
+    try {
+        const updated = await Books.findOneAndUpdate({ bookId: req.params.bookId }, req.body, { new: true });
+        res.json(updated);
+    } catch (err) {
+        res.status(400).json({ error: err.message });
+    }
+})
+  
+router.get('/api/books/:bookId', async (req, res) => {
+    try {
+        const book = await Books.findOne({ bookId: req.params.bookId })
+        if (!book) {
+            return res.status(404).json({ error: 'Book not found' });
+        }
+        res.json(book);
+    } catch (err) {
+        res.status(400).json({ error: err.message })
+    }
+})
+
+router.get('/api/books', async (req, res) => {
+    try {
+        const books = await Books.find()
+        res.json(books)
+    } catch (err) {
+        res.status(400).json({ error: err.message })
+    }
 })
 
 module.exports = router

@@ -39,6 +39,7 @@
 .reviewInfo{
     display: flex;
     justify-content: space-between;
+    gap: 40px;
     align-items: top;
 }
 .selected-bookContent, .selected-bookReview{
@@ -66,7 +67,7 @@
     display: flex;
     gap: 40px;
 }
-.saveReview, .cancelReview{
+.saveReview, .cancelReview, .saveReviewEdit{
     padding: 10px 30px;
     font-size: 20px;
     border-radius: 10px;
@@ -74,7 +75,7 @@
     font-weight: 600;
 }
 
-.saveReview{
+.saveReview, .saveReviewEdit{
     background-color: #7f9c7c;
 }
 .cancelReview{
@@ -86,6 +87,9 @@
 }
 .cancelReview:active{
     background-color: #794b3f;
+}
+.saveReviewEdit:active{
+    background-color: #657d63;
 }
 
 #search-resultEl{
@@ -124,14 +128,14 @@
 .bookInfo, .bookAuthorInf{
     display: flex;
     flex-wrap: wrap;
+}
+.bookAuthorInf{
+    align-items: center;
     gap: 5px;
 }
 .bookInfo{
     width: 100%;
-    gap: 20px;
-}
-.bookImg{
-    width: 100%;
+    gap: 10px;
 }
 
 #book-data{
@@ -149,4 +153,19 @@
 }
 #search-clear:active{
     background-color: #d4d4d4;
+}
+.book-data{
+    max-width: 170px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.book__author{
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #d5d5d5;
+    font-family: 400;
 }
