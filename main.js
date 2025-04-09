@@ -5,11 +5,9 @@ const app = express()
 
 const router = require('./routes/routes')
 const path = require('path')
-const cors = require('cors')
 
-
+const { genAI } = require('./services/gemini-start') 
 app.use(express.urlencoded({extended:false}))
-app.use(cors())
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.json())
 

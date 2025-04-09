@@ -6,7 +6,7 @@ async function fetchData() {
         const bookName = document.getElementById('search-book').value.toLowerCase().trim()
 
         
-        const res = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${bookName}&key=AIzaSyB0p2j_R9FiaQF__3qrT3FUmLC8ZwsfFsA`)
+        const res = await fetch(`/api/foundBook?q=${encodeURIComponent(bookName)}`)
         
         const data = await res.json()
 
@@ -101,3 +101,21 @@ async function createBookReview() {
         alert(payload.error)
     }
 }
+const searchInput = document.getElementById('search-book')
+const searchClearBtn = document.getElementById('search-clear')
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    if (window.location.pathname === '/newReviewPage') {
+        searchInput.addEventListener('input', fetchData)
+        searchClearBtn.addEventListener('click', () => {
+            searchInput.value = ''
+        
+            searchResult.innerHTML = ''
+            searchResult.style.display = 'none'
+        })        
+    }
+})
+
+
+

@@ -9,6 +9,7 @@
     color: #F4DEC1;
     outline: none;
 }
+
 body{
     background-color: #483979;
 }
@@ -132,6 +133,7 @@ body{
     border-radius: 5px;
     padding: 20px 15px;
     gap: 20px;
+    justify-content: space-between;
 }
 .review__book{
     flex-direction: column;
@@ -211,4 +213,327 @@ body{
     width: 30px;
     height: 30px;
 }
+.formBtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.addNewReviewBtn{
+    display: none;
+    background-color: #8099c5;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
 
+
+@media (min-width:1280px) {
+    /* HomePage header/footer */
+
+    .navigation__element{
+        font-size: 34px;
+
+    }
+
+    /* HomePage body */
+
+    .main-heading{
+        font-size: 60px;
+    }
+    .mainImg{
+        height: 600px;
+    }
+
+    /* HomePage review */
+
+    .review__heading{
+        font-size: 80px;
+    }
+    .search{
+        display: flex;
+        padding: 10px 14px;
+        border-radius: 25px;
+    }
+    .search-input{
+        padding: 12px 12px;
+        font-size: 40px;
+        color: #484848;
+    }
+
+    .search__img{
+        height: 35px;
+    }
+
+    .review__book{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .book-cover{
+        height: 400px;
+    }
+    .store-elements{
+        width: 350px;
+        flex-direction: column;
+        transition: transform 0.3s ease; 
+        background-color: #e6e6fa;
+        border-radius: 5px;
+        padding: 20px 15px;
+        gap: 20px;
+    }
+    .book-author{
+        font-size: 24px;
+        font-weight: 200;
+    }
+    .book-name{
+        font-size: 30px;
+    }
+    .reviewAction{
+        width: 50px;
+        height: 50px;
+    }
+    .addNewReview{
+        padding: 0 8px;
+        border-radius: 20%;
+        font-weight: 200;
+        font-size: 50px;
+    }
+}
+
+
+@media (max-width: 1280px) {
+    /* HomePage header/footer */
+
+    .navigation__element{
+        font-size: 24px;
+
+    }
+
+    /* HomePage body */
+
+    .main-heading{
+        font-size: 40px;
+    }
+    .mainImg{
+        height: 400px;
+    }
+
+    /* HomePage review */
+
+    .review__heading{
+        font-size: 40px;
+    }
+    .search{
+        display: flex;
+        padding: 5px 8px;
+        border-radius: 15px;
+    }
+    .search-input{
+        padding: 8px 8px;
+        font-size: 20px;
+        color: #484848;
+    }
+
+    .search__img{
+        height: 20px;
+    }
+
+    .review__book{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .book-cover{
+        height: 250px;
+    }
+    .store-elements{
+        width: 220px;
+        padding: 15px 10px;
+        gap: 10px;
+    }
+    .book-author{
+        font-size: 14px;
+        font-weight: 100;
+    }
+    .book-name{
+        font-size: 20px;
+    }
+    .reviewAction{
+        width: 30px;
+        height: 30px;
+    }
+    .addNewReview{
+        padding: 0 8px;
+        border-radius: 20%;
+        font-weight: 100;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 780px) {
+    /* HomePage header/footer */
+    .header{
+        display: flex;
+        gap: 30px;
+    }
+    .container-navigation{
+        gap: 20px;
+    }
+    .navigation__element{
+        font-size: 20px;
+    }
+    .logo-header{
+        width: 70px;
+    }
+
+    /* HomePage body */
+
+    .main-heading{
+        font-size: 30px;
+    }
+    .mainImg{
+        width: 100%;
+        height: auto;
+    }
+
+    /* HomePage review */
+
+    .review__heading{
+        font-size: 30px;
+    }
+    .search{
+        display: flex;
+        padding: 5px 8px;
+        border-radius: 15px;
+    }
+    .search-input{
+        padding: 5px 5px;
+        font-size: 18px;
+    }
+
+    .search__img{
+        height: 18px;
+    }
+
+    .review__book{
+        flex-direction: column;
+        gap: 15px;
+    }
+    .book-cover{
+        height: 180px;
+    }
+    .store-elements{
+        width: 180px;
+        padding: 12px 7px;
+        gap: 10px;
+    }
+    .book-author{
+        font-size: 12px;
+        font-weight: 200;
+    }
+    .book-name{
+        font-size: 16px;
+    }
+    .reviewAction{
+        width: 20px;
+        height: 20px;
+    }
+    .addNewReview{
+        padding: 0 5px;
+        border-radius: 20%;
+        font-weight: 100;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 512px) {
+    /* HomePage header/footer */
+    .wrapper-headermain{
+        gap: 40px;
+    }
+    .header{
+        display: flex;
+        gap: 20px;
+    }
+    .container-navigation{
+        gap: 15px;
+    }
+    .navigation__element{
+        font-size: 16px;
+    }
+    .logo-header{
+        width: 50px;
+    }
+
+    /* HomePage body */
+    .main{
+        padding-bottom: 50px;
+    }
+    .main-heading{
+        font-size: 20px;
+    }
+    .wrapper-mainImg{
+        display: none;
+    }
+
+    /* HomePage review */
+    .review-navigation{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .review__heading{
+        font-size: 20px;
+    }
+    .search{
+        display: flex;
+        padding: 5px 8px;
+        border-radius: 15px;
+    }
+    .search-input{
+        padding: 5px 5px;
+        font-size: 18px;
+    }
+    .addNewReviewBtn{
+        display: block;
+    }
+    .addNewReview{
+        display: none;
+    }
+    .search__img{
+        height: 18px;
+    }
+    .review__store{
+        flex-direction: column;
+        align-items: center;
+    }
+    .review__book{
+        flex-direction: column;
+        gap: 15px;
+    }
+    .book-cover{
+        height: 180px;
+    }
+    .store-elements{
+        width: 180px;
+        padding: 12px 7px;
+        gap: 10px;
+    }
+    .book-author{
+        font-size: 12px;
+        font-weight: 200;
+    }
+    .book-name{
+        font-size: 16px;
+    }
+    .reviewAction{
+        width: 20px;
+        height: 20px;
+    }
+    .addNewReview{
+        padding: 0 5px;
+        border-radius: 20%;
+        font-weight: 100;
+        font-size: 20px;
+    }
+}

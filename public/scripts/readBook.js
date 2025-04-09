@@ -24,15 +24,12 @@ window.addEventListener('DOMContentLoaded', async () => {
         const lcData = await res.json()
         if (!res.ok) throw new Error('Book not found')
 
-        console.log('Fetched book data:', lcData)
-
         reviewId = bookId
         reviewImg.src = lcData.bookCover || '/img/default.webp'
         reviewTitle.textContent = lcData.bookTitle || 'No Title'
         reviewAuth.textContent = lcData.bookAuthor || 'Unknown Author'
         reviewGenre.textContent = lcData.bookGenre || 'Unknown Genre'
         reviewText.value = lcData.reviewText || ''
-        // reviewText.readOnly = true
         bookReviewData.style.display = 'flex'
 
     } catch (err) {

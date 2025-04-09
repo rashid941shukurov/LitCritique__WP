@@ -36,8 +36,6 @@ router.post('/api/books', async (req, res) => {
     }
 })
 
-
-
 router.put('/api/books/:bookId', async (req, res) => {
     try {
         const updated = await Books.findOneAndUpdate({ bookId: req.params.bookId }, req.body, { new: true });
@@ -67,5 +65,37 @@ router.get('/api/books', async (req, res) => {
         res.status(400).json({ error: err.message })
     }
 })
+
+router.delete('/api/books/:bookId', async (req, res) => {
+    try {
+        await Books.findOneAndDelete({ bookId: req.params.bookId })
+        res.json({ message: 'User deleted' })
+    } catch (err) {
+            res.status(400).json({ error: err.message })
+    }
+})
+const { makeTextFormal } = require('../services/gemini-start')
+
+router.post('/makeFormal', async (req, res) => {
+    const { text } = req.body
+
+    try {
+        const formalText = await makeTextFormal(text)
+        res.json({ formalText })
+    } catch (err) {
+        console.error('Gemini Error:', err)
+        res.status(500).json({ error: 'Ошибка при обращении к Gemini API' })
+    }
+})
+
+const { searchBooks } = require('../services/googleBook-search')
+
+router.get('/api/foundBook', async (req, res) => {
+    const bookName = req.query.q
+    const data = await searchBooks(bookName) 
+    res.json(data)
+})
+
+  
 
 module.exports = router

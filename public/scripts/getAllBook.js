@@ -27,6 +27,7 @@ async function getAllBooks() {
     })
     addEditBtnListeners()
     readBtnListener()
+    deleteBtnListener()
 }
 
 

@@ -10,6 +10,8 @@
     <script src="scripts/searchNewBook.js" defer></script>
     <script src="scripts/updateBook.js" defer></script>
     <script src="scripts/readBook.js" defer></script>
+    <script src="scripts/deleteBook.js" defer></script>
+    <script src="scripts/searchThisBook.js" defer></script>
 
     
     <script src="scripts/getAllBook.js" defer></script>
@@ -33,27 +35,14 @@
             <p class="review__heading">Book Store</p>
             <div class="search">
                 <button class="search-icon"><img src="img/Vector.webp" draggable="false" alt="seach icon" class="search__img"></button>
-                <input type="text" placeholder="Search books: " class="search-input">
+                <input type="text" autocomplete="off" autocorrect="off" placeholder="Search books: " class="search-input" id="searchInput">
             </div>
         </div>
         <ul class="review__store" id="reviewStore">
-            <li class="store-elements">
-                <div class="review__book">
-                    <img src="/img/ex.webp" alt="example cover" class="book-cover" draggable="false">
-                    <p class="book-author">Auhtor</p>
-                    <h3 class="book-name">Book Name</h3>
-                </div>
-                <div class="review__actionButtons">
-                    <button class="reviewActionBtn read"><img src="img/read.webp" class="reviewAction" alt="read review"></button>
-                
-                    <button class="reviewActionBtn edit"><img src="img/edit.webp" class="reviewAction" alt="edit review"></button>
-
-                    <button class="reviewActionBtn delete"><img src="img/delete.webp" class="reviewAction" alt="delete review"></button>
-                </div>  
-            </li>
             <li class="store-postNew">
-                <form action="/newReviewPage" method="GET">
+                <form class="formBtn" action="/newReviewPage" method="GET">
                     <button class="addNewReview">&#65291;</button>
+                    <button class="addNewReviewBtn">Create Review</button>
                 </form>
             </li>
         </ul>

@@ -9,6 +9,12 @@
 
 
 /* Contact part */
+.contact{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .contact-content, .contact__elements{
     display: flex;
     gap: 20px;
@@ -30,4 +36,40 @@
 }
 .imgContact{
     height: 100%;
+}
+
+@media (max-width:1280px) {
+    .contact{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+    .contact-img{
+        max-height: 60vh;
+    }
+}
+
+@media (max-width:780px) {
+    .contact{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+    .contact-img{
+        max-height: 40vh;
+    }
+}
+@media (max-width:512px) {
+    .contact{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        gap: 60px;
+    }
+    .contact-img{
+        margin-bottom: 40px;
+        max-height: 25vh;
+    }
 }

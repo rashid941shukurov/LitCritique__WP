@@ -38,12 +38,14 @@
 
 .reviewInfo{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 40px;
     align-items: top;
 }
 .selected-bookContent, .selected-bookReview{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     gap: 20px;
 }
@@ -168,4 +170,108 @@
     font-family: 'Courier New', Courier, monospace;
     color: #d5d5d5;
     font-family: 400;
+}
+.selectedReview-prettier{
+    padding: 10px 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    color: black;
+    font-weight: 600;
+    background-color: #8099c5;
+}
+.selectedReview-prettier:active{
+    background-color: #6b80a4;
+}
+
+
+
+#reviewMessage {
+    width: 450px;
+    height: 300px;
+    resize: vertical;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+@media (min-width:1280px) {
+
+}
+
+
+@media (max-width: 1280px) {
+    #search-button{
+        font-size: 24px;
+        padding: 10px 10px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        background-color: #96B792;
+        width: calc(100% - 90%);
+    }
+    .search-input{
+        font-size: 24px;
+    }
+    .selectedReview, .selectedHeading{
+        font-size: 40px;
+        font-weight: 600;
+    }
+    .book-data{
+        max-width: 200px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .bookImg{
+        height: 400px;
+    }
+    .book__author{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 780px) {
+
+    #search-button{
+        font-size: 18px;
+        padding: 10px 10px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        background-color: #96B792;
+        width: calc(100% - 70%);
+    }
+    #reviewMessage {
+        width: 100%;
+        resize: vertical;
+        padding: 10px;
+        font-size: 16px;
+        box-sizing: border-box;
+        border-radius: 10px;
+    }
+    .search-input{
+        font-size: 18px;
+    }
+    .selectedReview, .selectedHeading{
+        font-size: 40px;
+        font-weight: 600;
+    }
+    .book-data{
+        max-width: 200px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .bookImg{
+        height: 200px;
+    }
+    .book__author{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 512px) {
+
 }
