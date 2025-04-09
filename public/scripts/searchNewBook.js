@@ -71,75 +71,36 @@ function inputInReview() {
 }
 
 
-// async function createBookReview() {
-//     const thisReviewText = reviewText.value.trim()
-
-//     if (!reviewId) {
-//         console.error("Review ID is undefined, cannot create review.");
-//         return;
-//     }
-
-//     const res = await fetch(`/api/books/`, {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({
-//             bookId: reviewId, 
-//             bookTitle: reviewTitle.textContent,
-//             bookAuthor: reviewAuth.textContent,
-//             bookGenre: reviewGenre.textContent,
-//             bookCover: reviewImg.src,
-//             reviewText: thisReviewText
-//         })
-//     })
-
-//     const payload = await res.json()
-
-//     if (res.ok) {
-//         window.location.href = '/'
-//     } else {
-//         console.error('Server error:', payload.error)
-//         alert(payload.error)
-//     }
-// }
-
 async function createBookReview() {
-    const thisReviewText = reviewText.value.trim();
+    const thisReviewText = reviewText.value.trim()
 
     if (!reviewId) {
         console.error("Review ID is undefined, cannot create review.");
         return;
     }
 
-    const payload = {
-        bookId: reviewId, 
-        bookTitle: reviewTitle.textContent,
-        bookAuthor: reviewAuth.textContent,
-        bookGenre: reviewGenre.textContent,
-        bookCover: reviewImg.src,
-        reviewText: thisReviewText
-    };
+    const res = await fetch(`/api/books/ap`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            bookId: reviewId, 
+            bookTitle: reviewTitle.textContent,
+            bookAuthor: reviewAuth.textContent,
+            bookGenre: reviewGenre.textContent,
+            bookCover: reviewImg.src,
+            reviewText: thisReviewText
+        })
+    })
 
-    try {
-        const res = await fetch('/api/books', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
+    const payload = await res.json()
 
-        if (!res.ok) {
-            throw new Error('Failed to create book review');
-        }
-
-        const data = await res.json();
-        console.log(data); // Проверь, что возвращается от сервера
-
-        window.location.href = '/';
-    } catch (err) {
-        console.error('Error:', err);
-        alert('Something went wrong with the server request');
+    if (res.ok) {
+        window.location.href = '/'
+    } else {
+        console.error('Server error:', payload.error)
+        alert(payload.error)
     }
 }
-
 const searchInput = document.getElementById('search-book')
 const searchClearBtn = document.getElementById('search-clear')
 
