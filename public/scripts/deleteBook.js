@@ -9,7 +9,7 @@ function deleteBtnListener() {
             const bookId = reviewBook.dataset.id
 
             try {
-                const res = await fetch(`${BASE_URL}/${bookId}`, {
+                const res = await fetch(`/api/books/${bookId}`, {
                     method: 'DELETE'
                 })
 

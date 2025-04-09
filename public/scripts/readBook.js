@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     const bookId = localStorage.getItem('bookId')
     bookReviewData.style.display = 'none'
     try {
-        const res = await fetch(`${BASE_URL}/${bookId}`)
+        const res = await fetch(`/api/books/${bookId}`)
         const lcData = await res.json()
         if (!res.ok) throw new Error('Book not found')
 
@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
 async function readBook() {
     const bookId = localStorage.getItem('bookId')  
-    const res = await fetch(`${BASE_URL}/${bookId}`)
+    const res = await fetch(`/api/books/${bookId}`)
 
     const payload = await res.json();
 

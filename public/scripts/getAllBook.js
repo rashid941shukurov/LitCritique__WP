@@ -1,6 +1,6 @@
 async function getAllBooks() {
 
-    const res = await fetch(`${BASE_URL}/`)
+    const res = await fetch(`/api/books`)
     const lcData = await res.json()
     const reviewStore = document.getElementById('reviewStore')
 
