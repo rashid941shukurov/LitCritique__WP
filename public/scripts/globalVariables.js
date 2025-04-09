@@ -9,7 +9,7 @@ const searchBook = document.getElementById('search-resultEl')
 let bookHtml 
 const searchResult = document.getElementById('search-resultEl')
 
-const BASE_URL = 'http://localhost:4200/api/books'
+const BASE_URL = '/api/books'
 
 const reviewText = document.getElementById('reviewMessage')
 const formalBtn = document.getElementById('makePrettier')
