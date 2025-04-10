@@ -84,7 +84,7 @@ router.post('/makeFormal', async (req, res) => {
         res.json({ formalText })
     } catch (err) {
         console.error('Gemini Error:', err)
-        res.status(500).json({ error: 'Ошибка при обращении к Gemini API' })
+        res.status(500).json({ error: 'Error in req to Gemini' })
     }
 })
 

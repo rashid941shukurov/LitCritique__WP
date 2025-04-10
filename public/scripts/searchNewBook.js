@@ -72,11 +72,17 @@ function inputInReview() {
 
 async function createBookReview() {
     const thisReviewText = reviewText.value.trim()
-
+    let checkRes
     if (!reviewId) {
         console.error("Review ID is undefined, cannot create review.");
         return;
     }
+    checkRes = await fetch(`/api/books/${reviewId}`)
+    if (checkRes.ok) {
+        alert('This book has already reviewed. Please choose another book')
+        return;
+    }
+
 
     const res = await fetch(`/api/books/`, {
         method: 'POST',
