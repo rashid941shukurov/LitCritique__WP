@@ -1,12 +1,19 @@
 async function getAllBooks() {
 
-    const res = await fetch(`/api/books`)
+    const res = await fetch(`${global_url}`)
     const lcData = await res.json()
     const reviewStore = document.getElementById('reviewStore')
 
     const liCreate = document.querySelector('.store-postNew')
     const oldReviews = reviewStore.querySelectorAll('.store-elements')
-    oldReviews.forEach(el => el.remove());
+    oldReviews.forEach(el => el.remove())
+    console.log("Ответ от сервера:", lcData)
+
+    if (Array.isArray(lcData)) {
+        console.log('It is array')
+    } else {
+    console.error("Ожидался массив, а пришло что-то другое:", lcData);
+    }
 
     lcData.forEach(item => {
         const li = document.createElement('li')

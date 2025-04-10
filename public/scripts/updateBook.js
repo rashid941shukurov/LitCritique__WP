@@ -19,8 +19,7 @@ window.addEventListener('DOMContentLoaded', async () => {
 
     const bookId = localStorage.getItem('bookId');
     try {
-        
-        const res = await fetch(`/api/books/${bookId}`)
+        const res = await fetch(`${global_url}${bookId}`)
         const lcData = await res.json()
         if (!res.ok) throw new Error('Book not found')
 
@@ -43,7 +42,8 @@ async function updateBook() {
     const bookId = localStorage.getItem('bookId')  
 
     const thisReviewText = reviewText.value.trim()
-    const res = await fetch(`/api/books/${bookId}`, {
+    const res = await fetch(`${global_url}${bookId}`
+    , {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

@@ -11,3 +11,5 @@ const searchResult = document.getElementById('search-resultEl')
 
 const reviewText = document.getElementById('reviewMessage')
 const formalBtn = document.getElementById('makePrettier')
+
+const global_url = window.location.origin + '/api/books'
