@@ -10,8 +10,7 @@ function deleteBtnListener() {
 
             try {
                 
-                const res = await fetch(`${global_url}${bookId}`
-                , {
+                const res = await fetch(`/api/books/${bookId}`, {
                     method: 'DELETE'
                 })
 

@@ -4,9 +4,8 @@ async function fetchData() {
 
         bookHtml = ''
         const bookName = document.getElementById('search-book').value.toLowerCase().trim()
-        const url = window.location.origin + '/api/foundBook'
         
-        const res = await fetch(`${url}?q=${encodeURIComponent(bookName)}`)
+        const res = await fetch(`/api/foundBook?q=${encodeURIComponent(bookName)}`)
         
         const data = await res.json()
 
