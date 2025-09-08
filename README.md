@@ -25,7 +25,7 @@ Follow these steps:
 
 git clone https://github.com/capebabra/WebTechnology_CW
 
-and also the official host server https://litcritique-b9b3486adf72.herokuapp.com/
+and also the official host server https://litcritique.onrender.com/
 
 2. Then you should open this folder in your IDE and in terminal input **npm install**
 3. Lastly after the terminal will finish downloading all dependencies. Just input **npm start**
